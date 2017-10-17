@@ -1,0 +1,3 @@
+[submodule "wwise"]
+	path = wwise
+	url = https://github.com/NotYannis/katamari-damaci-2-wwise
