@@ -85,7 +85,7 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1072916883706990}
-  m_Mesh: {fileID: 4300000, guid: abccf0e156b21854cabdd84ef1c3053c, type: 3}
+  m_Mesh: {fileID: 4300000, guid: 2018fab75c48cab479f06432e6e72e60, type: 3}
 --- !u!54 &54664875940892986
 Rigidbody:
   m_ObjectHideFlags: 1
@@ -126,10 +126,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1072916883706990}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 79550e15cea3b954d97dce4fafb03c74, type: 3}
+  m_Script: {fileID: 11500000, guid: ca909997da890434d9f8dc5f4d9ed2a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1
+  speed: 12
 --- !u!135 &135340711421591788
 SphereCollider:
   m_ObjectHideFlags: 1
