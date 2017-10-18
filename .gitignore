@@ -87,7 +87,6 @@ $RECYCLE.BIN/
 */Wwise
 *.akd
 *.cache
-*.meta
 
 #But not these files
 !.wproj
