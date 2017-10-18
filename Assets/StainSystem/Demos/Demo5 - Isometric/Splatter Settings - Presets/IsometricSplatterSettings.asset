@@ -1,0 +1,55 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 735bbf7ec794347c49beaec86c5345ec, type: 3}
+  m_Name: IsometricSplatterSettings
+  m_EditorClassIdentifier: 
+  mode: 1
+  directionMode: 0
+  spanAngle: 90
+  directionReference: {fileID: 0}
+  direction: {x: 0, y: 0, z: 0}
+  orientation: 1
+  numBranchesMean: 3
+  numBranchesVariance: 1.5
+  branchChildrenMean: 3
+  branchChildrenVariance: 2.5
+  scaleMean: 3
+  scaleVariance: 0.1
+  scaleMin: 0.1
+  centerPositionRange: 0.6
+  randomRotation: 0
+  moveSpeedMean: 0
+  moveSpeedVariance: 0
+  stepDuration: 0.1
+  damping: 1
+  colorMode: 0
+  startColor:
+    r: 0.65517235
+    g: 0
+    b: 1
+    a: 1
+  colors:
+  - r: 0.9453227
+    g: 0.8041739
+    b: 0.9852941
+    a: 0
+  multiplyColor: 0
+  fadeOutBranches: 0
+  brightnessVariation: 0
+  hueVariation: 0
+  saturationVariation: 0
+  particleMode: 0
+  particleTexture: {fileID: 0}
+  particleMaterial: {fileID: 0}
+  maxParticles: 20000
+  removeParticles: 1
+  particleLifetime: 10
+  sortingLayerName: SplattersHere
