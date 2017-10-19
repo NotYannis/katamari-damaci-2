@@ -73,7 +73,7 @@ MonoBehaviour:
   InnerBoxSize: {x: 0, y: 0, z: 0}
   InnerBoxSizeMultiplier: 1
   antialiasing:
-    m_Enabled: 0
+    m_Enabled: 1
     m_Settings:
       method: 0
       fxaaSettings:
@@ -84,14 +84,14 @@ MonoBehaviour:
         stationaryBlending: 0.95
         motionBlending: 0.85
   ambientOcclusion:
-    m_Enabled: 0
+    m_Enabled: 1
     m_Settings:
-      intensity: 1
-      radius: 0.3
-      sampleCount: 10
+      intensity: 0.15
+      radius: 0.26
+      sampleCount: 16
       downsampling: 1
       forceForwardCompatibility: 0
-      ambientOnly: 0
+      ambientOnly: 1
       highPrecision: 0
   screenSpaceReflection:
     m_Enabled: 0
@@ -115,11 +115,11 @@ MonoBehaviour:
   depthOfField:
     m_Enabled: 0
     m_Settings:
-      focusDistance: 10
-      aperture: 5.6
-      focalLength: 50
-      useCameraFov: 0
-      kernelSize: 1
+      focusDistance: 16
+      aperture: 16
+      focalLength: 195
+      useCameraFov: 1
+      kernelSize: 0
   motionBlur:
     m_Enabled: 0
     m_Settings:
@@ -127,36 +127,36 @@ MonoBehaviour:
       sampleCount: 10
       frameBlending: 0
   eyeAdaptation:
-    m_Enabled: 0
+    m_Enabled: 1
     m_Settings:
-      lowPercent: 45
-      highPercent: 95
+      lowPercent: 1
+      highPercent: 11.147875
       minLuminance: -5
-      maxLuminance: 1
+      maxLuminance: -3.2
       keyValue: 0.25
       dynamicKeyValue: 1
       adaptationType: 0
       speedUp: 2
       speedDown: 1
-      logMin: -8
-      logMax: 4
+      logMin: -6
+      logMax: 5
   bloom:
-    m_Enabled: 0
-    m_Settings:
-      bloom:
-        intensity: 0.5
-        threshold: 1.1
-        softKnee: 0.5
-        radius: 4
-        antiFlicker: 0
-      lensDirt:
-        texture: {fileID: 0}
-        intensity: 3
-  colorGrading:
     m_Enabled: 1
     m_Settings:
+      bloom:
+        intensity: 0.05
+        threshold: 0.45
+        softKnee: 0.52
+        radius: 6
+        antiFlicker: 1
+      lensDirt:
+        texture: {fileID: 2800000, guid: 69e847bbff1cf5449a4ee0bbd045dbc9, type: 3}
+        intensity: 2.38
+  colorGrading:
+    m_Enabled: 0
+    m_Settings:
       tonemapping:
-        tonemapper: 2
+        tonemapper: 1
         neutralBlackIn: 0.02
         neutralWhiteIn: 10
         neutralBlackOut: 0
@@ -164,22 +164,22 @@ MonoBehaviour:
         neutralWhiteLevel: 5.3
         neutralWhiteClip: 10
       basic:
-        postExposure: 0
-        temperature: 72
+        postExposure: 0.75
+        temperature: 0
         tint: 0
         hueShift: 0
-        saturation: 1.146
-        contrast: 0.458
+        saturation: 1
+        contrast: 1
       channelMixer:
-        red: {x: 10, y: 0, z: 0}
+        red: {x: 1, y: 0, z: 0}
         green: {x: 0, y: 1, z: 0}
-        blue: {x: 0, y: 0, z: 10}
+        blue: {x: 0, y: 0, z: 1}
         currentEditingChannel: 0
       colorWheels:
         mode: 1
         log:
           slope: {r: 1, g: 1, b: 1, a: 0}
-          power: {r: 1, g: 1, b: 1, a: 0}
+          power: {r: 1, g: 1, b: 1, a: 0.5}
           offset: {r: 1, g: 1, b: 1, a: 0}
         linear:
           lift: {r: 1, g: 1, b: 1, a: 0}
@@ -204,7 +204,7 @@ MonoBehaviour:
               tangentMode: 0
             m_PreInfinity: 2
             m_PostInfinity: 2
-            m_RotationOrder: 4
+            m_RotationOrder: 0
           m_Loop: 0
           m_ZeroValue: 0
           m_Range: 1
@@ -320,7 +320,7 @@ MonoBehaviour:
         e_CurveG: 0
         e_CurveB: 0
   userLut:
-    m_Enabled: 0
+    m_Enabled: 1
     m_Settings:
       lut: {fileID: 0}
       contribution: 1
@@ -337,20 +337,20 @@ MonoBehaviour:
       size: 1
       luminanceContribution: 0.8
   vignette:
-    m_Enabled: 0
+    m_Enabled: 1
     m_Settings:
       mode: 0
       color: {r: 0, g: 0, b: 0, a: 1}
       center: {x: 0.5, y: 0.5}
-      intensity: 0.45
-      smoothness: 0.2
+      intensity: 0.3
+      smoothness: 0.33
       roundness: 1
       mask: {fileID: 0}
       opacity: 1
       rounded: 0
   dithering:
     m_Enabled: 0
-  _ResetProfile: {fileID: 0}
+  _ResetProfile: {fileID: 11400000, guid: 012f459fdb402c146bb972379d9619bc, type: 2}
 --- !u!135 &135982527826469770
 SphereCollider:
   m_ObjectHideFlags: 1
