@@ -17,4 +17,5 @@ public class ManagerScript : MonoBehaviour {
             Application.Quit();
         }
     }
+    
 }
