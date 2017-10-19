@@ -2936,6 +2936,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae49034dcde27414fadff2a9d0029086, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  terrainSize: 0
   player: {fileID: 1702477824}
   terrains:
   - {fileID: 1117362984234346, guid: fc577e0675ea7284c8770cd75d10bd16, type: 2}

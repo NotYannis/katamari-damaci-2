@@ -175,10 +175,10 @@ MonoBehaviour:
   InnerSphereRadius: 0
   OuterBoxSize: {x: 100, y: 2000, z: 100}
   OuterBoxSizeMultiplier: 100
-  InnerBoxSize: {x: 0, y: 0, z: 0}
-  InnerBoxSizeMultiplier: 1
+  InnerBoxSize: {x: 90, y: 1900, z: 90}
+  InnerBoxSizeMultiplier: 100
   antialiasing:
-    m_Enabled: 0
+    m_Enabled: 1
     m_Settings:
       method: 0
       fxaaSettings:
@@ -189,14 +189,14 @@ MonoBehaviour:
         stationaryBlending: 0.95
         motionBlending: 0.85
   ambientOcclusion:
-    m_Enabled: 0
+    m_Enabled: 1
     m_Settings:
-      intensity: 1
-      radius: 0.3
-      sampleCount: 10
+      intensity: 0.15
+      radius: 0.26
+      sampleCount: 16
       downsampling: 1
       forceForwardCompatibility: 0
-      ambientOnly: 0
+      ambientOnly: 1
       highPrecision: 0
   screenSpaceReflection:
     m_Enabled: 0
@@ -220,11 +220,11 @@ MonoBehaviour:
   depthOfField:
     m_Enabled: 0
     m_Settings:
-      focusDistance: 10
-      aperture: 5.6
-      focalLength: 50
-      useCameraFov: 0
-      kernelSize: 1
+      focusDistance: 16
+      aperture: 16
+      focalLength: 195
+      useCameraFov: 1
+      kernelSize: 0
   motionBlur:
     m_Enabled: 0
     m_Settings:
@@ -232,64 +232,64 @@ MonoBehaviour:
       sampleCount: 10
       frameBlending: 0
   eyeAdaptation:
-    m_Enabled: 0
+    m_Enabled: 1
     m_Settings:
-      lowPercent: 45
-      highPercent: 95
+      lowPercent: 1
+      highPercent: 11.147875
       minLuminance: -5
-      maxLuminance: 1
+      maxLuminance: -3.2
       keyValue: 0.25
       dynamicKeyValue: 1
       adaptationType: 0
       speedUp: 2
       speedDown: 1
-      logMin: -8
-      logMax: 4
+      logMin: -6
+      logMax: 5
   bloom:
-    m_Enabled: 0
+    m_Enabled: 1
     m_Settings:
       bloom:
-        intensity: 0.5
-        threshold: 1.1
-        softKnee: 0.5
-        radius: 4
-        antiFlicker: 0
+        intensity: 0.05
+        threshold: 0.45
+        softKnee: 0.52
+        radius: 6
+        antiFlicker: 1
       lensDirt:
-        texture: {fileID: 0}
-        intensity: 3
+        texture: {fileID: 2800000, guid: 69e847bbff1cf5449a4ee0bbd045dbc9, type: 3}
+        intensity: 2.38
   colorGrading:
     m_Enabled: 1
     m_Settings:
       tonemapping:
-        tonemapper: 2
+        tonemapper: 1
         neutralBlackIn: 0.02
-        neutralWhiteIn: 10
+        neutralWhiteIn: 5
         neutralBlackOut: 0
         neutralWhiteOut: 10
-        neutralWhiteLevel: 5.3
+        neutralWhiteLevel: 2
         neutralWhiteClip: 10
       basic:
-        postExposure: 0
-        temperature: 72
+        postExposure: 0.75
+        temperature: 0
         tint: 0
         hueShift: 0
-        saturation: 1.146
-        contrast: 0.458
+        saturation: 1
+        contrast: 1
       channelMixer:
-        red: {x: 10, y: 0, z: 0}
-        green: {x: 0, y: 10, z: 0}
-        blue: {x: 0, y: 0, z: 1}
+        red: {x: 0.8, y: 0, z: 0}
+        green: {x: 0, y: 0.8, z: 0}
+        blue: {x: 0, y: 0, z: 0.8}
         currentEditingChannel: 0
       colorWheels:
         mode: 1
         log:
-          slope: {r: 1, g: 1, b: 1, a: 0}
-          power: {r: 1, g: 1, b: 1, a: 0}
-          offset: {r: 1, g: 1, b: 1, a: 0}
+          slope: {r: 1, g: 0.8906845, b: 0.8422011, a: 0}
+          power: {r: 1, g: 0.9715506, b: 0.84360623, a: 0.5}
+          offset: {r: 1, g: 0.99478483, b: 0.83602786, a: 0}
         linear:
-          lift: {r: 1, g: 1, b: 1, a: 0}
-          gamma: {r: 1, g: 1, b: 1, a: 0}
-          gain: {r: 1, g: 1, b: 1, a: 0}
+          lift: {r: 1, g: 0.9033278, b: 0.75573707, a: 0}
+          gamma: {r: 0.99519795, g: 1, b: 0.9750842, a: -0.35820895}
+          gain: {r: 1, g: 0.9418004, b: 0.79558444, a: 0}
       curves:
         master:
           curve:
@@ -300,16 +300,16 @@ MonoBehaviour:
               value: 0
               inSlope: 1
               outSlope: 1
-              tangentMode: 0
+              tangentMode: 34
             - serializedVersion: 2
               time: 1
               value: 1
               inSlope: 1
               outSlope: 1
-              tangentMode: 0
+              tangentMode: 34
             m_PreInfinity: 2
             m_PostInfinity: 2
-            m_RotationOrder: 4
+            m_RotationOrder: 0
           m_Loop: 0
           m_ZeroValue: 0
           m_Range: 1
@@ -386,7 +386,7 @@ MonoBehaviour:
             m_PreInfinity: 2
             m_PostInfinity: 2
             m_RotationOrder: 4
-          m_Loop: 1
+          m_Loop: 0
           m_ZeroValue: 0.5
           m_Range: 1
         hueVSsat:
@@ -427,7 +427,7 @@ MonoBehaviour:
   userLut:
     m_Enabled: 0
     m_Settings:
-      lut: {fileID: 0}
+      lut: {fileID: 2800000, guid: e4a2a07c00d9152499cc256f503005f4, type: 3}
       contribution: 1
   chromaticAberration:
     m_Enabled: 0
@@ -442,20 +442,20 @@ MonoBehaviour:
       size: 1
       luminanceContribution: 0.8
   vignette:
-    m_Enabled: 0
+    m_Enabled: 1
     m_Settings:
       mode: 0
       color: {r: 0, g: 0, b: 0, a: 1}
       center: {x: 0.5, y: 0.5}
-      intensity: 0.45
-      smoothness: 0.2
+      intensity: 0.3
+      smoothness: 0.33
       roundness: 1
       mask: {fileID: 0}
       opacity: 1
       rounded: 0
   dithering:
-    m_Enabled: 0
-  _ResetProfile: {fileID: 0}
+    m_Enabled: 1
+  _ResetProfile: {fileID: 11400000, guid: 012f459fdb402c146bb972379d9619bc, type: 2}
 --- !u!135 &135417947188274016
 SphereCollider:
   m_ObjectHideFlags: 1

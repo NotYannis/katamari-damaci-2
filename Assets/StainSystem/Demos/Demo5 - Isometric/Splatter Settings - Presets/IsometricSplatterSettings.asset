@@ -31,23 +31,16 @@ MonoBehaviour:
   stepDuration: 0.1
   damping: 1
   colorMode: 0
-  startColor:
-    r: 0.65517235
-    g: 0
-    b: 1
-    a: 1
+  startColor: {r: 0.65517235, g: 0, b: 1, a: 1}
   colors:
-  - r: 0.9453227
-    g: 0.8041739
-    b: 0.9852941
-    a: 0
+  - {r: 0.9453227, g: 0.8041739, b: 0.9852941, a: 0}
   multiplyColor: 0
   fadeOutBranches: 0
   brightnessVariation: 0
   hueVariation: 0
   saturationVariation: 0
   particleMode: 0
-  particleTexture: {fileID: 0}
+  particleTexture: {fileID: 2800000, guid: c006ab37b4937483a873093786c64bd6, type: 3}
   particleMaterial: {fileID: 0}
   maxParticles: 20000
   removeParticles: 1
