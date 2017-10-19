@@ -52,26 +52,24 @@ public class TerrainChunk {
 
 	public GameObject Terrain { get; set; }
 	private TerrainChunkSettings Settings { get; set; }
-	private Material mat;
 
 	private NoiseProvider NoiseProvider { get; set; }
 	public bool entitiesLoaded = false;
 
-	public TerrainChunk(TerrainChunkSettings _settings, NoiseProvider _noise, int _x, int _z, GameObject _terrain, Material _mat)
+    public TerrainType type;
+
+	public TerrainChunk(TerrainChunkSettings _settings, NoiseProvider _noise, TerrainType type, int _x, int _z, GameObject _terrain)
 	{
 		Settings = _settings;
 		NoiseProvider = _noise;
 		Position = new Vector3Int(_x, 0, _z);
 		Terrain = _terrain;
-		mat = _mat;
 	}
 
 	public void CreateTerrain()
 	{
 		Terrain = GameObject.Instantiate(Terrain, new Vector3(Position.x * Settings.Length, 0.0f, Position.z * Settings.Length), Quaternion.identity);
 		Terrain.transform.SetParent (Settings.parentTerrain.transform);
-		MeshRenderer renderer = Terrain.GetComponent<MeshRenderer>();
-		renderer.material = mat;
 	}
 
 	public void RemoveTerrain()
@@ -98,6 +96,11 @@ public class NoiseProvider : INoiseProvider
 	}
 }
 
+public enum TerrainType
+{
+    Grass, Water, Dirt, Leaves
+}
+
 public class TerrainGeneration : MonoBehaviour {
 	private int terrainSize;
 	public GameObject player;
@@ -109,8 +112,7 @@ public class TerrainGeneration : MonoBehaviour {
 	private Dictionary<Vector3Int, TerrainChunk> requestedChunks = new Dictionary<Vector3Int, TerrainChunk>();
 	private Dictionary<Vector3Int, TerrainChunk> removeChunk = new Dictionary<Vector3Int, TerrainChunk>();
 
-	public Material terrainMat;
-	public GameObject mesh;
+	public GameObject[] terrains = new GameObject[4];
 
 	// Use this for initialization
 	void Start () {
@@ -132,9 +134,11 @@ public class TerrainGeneration : MonoBehaviour {
 
 	TerrainChunk GenerateChunk(int x, int z)
 	{
+        int terrainType = Random.Range(0, terrains.Length);
+
 		var noiseProvider = new NoiseProvider();
 
-		var terrain = new TerrainChunk(settings, noiseProvider, x, z, mesh, terrainMat);
+		var terrain = new TerrainChunk(settings, noiseProvider, (TerrainType)terrainType, x, z, terrains[terrainType]);
 
 		return terrain;
 	}

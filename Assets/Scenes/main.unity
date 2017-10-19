@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.70588285, g: 0.75674015, b: 0.95842654, a: 1}
+  m_IndirectSpecularColor: {r: 0.7058861, g: 0.7567499, b: 0.95824, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -209,8 +209,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 642a3362a1cde394c9199c3a943f8482, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
   speed: 1
   detectionDistance: 20
   jump: 0
@@ -811,7 +811,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11424124, guid: f2d7aecc33ad44d6e82de57427232543, type: 2}
       propertyPath: defaultSettings
-      value: 
+      value:
       objectReference: {fileID: 11400000, guid: b7c8dc0f3233d49dea366d86dffe0709,
         type: 2}
     - target: {fileID: 19907744, guid: f2d7aecc33ad44d6e82de57427232543, type: 2}
@@ -950,7 +950,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 2300000, guid: f5a847fc6a443574eb3abcf379cf77c3, type: 3}
       propertyPath: m_Materials.Array.data[0]
-      value: 
+      value:
       objectReference: {fileID: 2100000, guid: 694fc525ddca846b4b1314506ee36e5d, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f5a847fc6a443574eb3abcf379cf77c3, type: 3}
@@ -1550,8 +1550,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 45c7cd7ca3d536e4bb61615e960d1d67, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
   basePath: Audio\GeneratedSoundBanks
   language: English(US)
   defaultPoolSize: 4096
@@ -1572,8 +1572,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 15513096e93985d4681357635fc93961, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
 --- !u!4 &1220749062
 Transform:
   m_ObjectHideFlags: 0
@@ -1603,8 +1603,7 @@ GameObject:
   - component: {fileID: 1322680572}
   - component: {fileID: 1322680567}
   - component: {fileID: 1322680575}
-  - component: {fileID: 1322680577}
-  - component: {fileID: 1322680576}
+
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1621,8 +1620,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9102c490dc9980643b21b8f93b0417e3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
 --- !u!124 &1322680568
 Behaviour:
   m_ObjectHideFlags: 0
@@ -1687,8 +1686,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1a3adb2e97cc244488fa5d5825d1bb0a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
   player: {fileID: 1702477824}
 --- !u!114 &1322680572
 MonoBehaviour:
@@ -1699,8 +1698,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ff26db721962cdf4a8edcdfa9a767d2a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
   profile: {fileID: 11400000, guid: 012f459fdb402c146bb972379d9619bc, type: 2}
 --- !u!65 &1322680573
 BoxCollider:
@@ -1738,41 +1737,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a7322f8b3a15b9b4bb864cf686b63013, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1322680576
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1322680566}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b4ba003c8fd0cc74aa90b18dc8d80b47, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isDefaultListener: 1
-  listenerId: 0
---- !u!114 &1322680577
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1322680566}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ff0f3e049bc48ee41a3eb43557020cb2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_positionOffsetData:
-    positionOffset: {x: 0, y: 0, z: 0}
-    KeepMe: 0
-  isEnvironmentAware: 0
-  isStaticObject: 0
-  m_listeners:
-    initialListenerList: []
-  m_posOffsetData: {fileID: 0}
-  listenerMask: 1
+  m_Name:
+  m_EditorClassIdentifier:
+
+  dayBox: {fileID: 2100000, guid: 124ab15d9be28b646aebb1ce0f35cdaf, type: 2}
+  nightBox: {fileID: 2100000, guid: 3a91826fb2225ea4b842cb7f13d328ae, type: 2}
 --- !u!1 &1351090087
 GameObject:
   m_ObjectHideFlags: 0
@@ -1836,8 +1805,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a10dc22ca8078c041a0aa95ff2eb8bea, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
 --- !u!33 &1351090090
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -2319,8 +2288,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5ac8c776dd40840e4a284f68b442297b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
   speed: 14
   acceleration: 6
   useSplatter: 1
@@ -2857,11 +2826,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ae49034dcde27414fadff2a9d0029086, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
   player: {fileID: 1702477824}
-  terrainMat: {fileID: 2100000, guid: 5d5987f37b1f9aa43a1bccf7f54695e5, type: 2}
-  mesh: {fileID: 100000, guid: 12dcf4720a990f94597a622ea7af531f, type: 3}
+
+  terrains:
+  - {fileID: 1117362984234346, guid: fc577e0675ea7284c8770cd75d10bd16, type: 2}
+  - {fileID: 1481279372423366, guid: 804d927a144a9034891822a3a732bcf4, type: 2}
+  - {fileID: 1616956255473046, guid: a81b0ee35a1827642a756d1a5e479e09, type: 2}
+  - {fileID: 1223989723505404, guid: ff77eae172519ab44ada652404af1ed3, type: 2}
 --- !u!4 &2049514865
 Transform:
   m_ObjectHideFlags: 0
@@ -2884,8 +2857,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 375d797204b0544ab920f6f349a6f60b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
   entities:
   - {fileID: 1668003463309658, guid: fd26c796fc2b4493cb997070d661a4f2, type: 2}
   terrainParent: {fileID: 2049514863}
