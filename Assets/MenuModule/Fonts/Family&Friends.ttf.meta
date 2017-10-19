@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: acc54e70a728c1042962ff4ab602c6a0
+timeCreated: 1508405416
+licenseType: Free
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: 'Family & Friends '
+  fontNames:
+  - 'Family & Friends '
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
