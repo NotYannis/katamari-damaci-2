@@ -80,16 +80,4 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
-#================================
-# Wwise
-#================================
-
-*/Wwise
-*.akd
-*.cache
-
-#But not these files
-!.wproj
-!.wwu
-!/Wwise/Originals
-!/Assets/StreamingAssets
+Assets/StreamingAssets/Audio/
