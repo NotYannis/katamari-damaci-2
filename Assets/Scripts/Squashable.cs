@@ -35,6 +35,7 @@ public class Squashable : MonoBehaviour {
     }
     
     public IEnumerator SquashEffect() {
+        AkSoundEngine.PostEvent("ecraser", gameObject);
         _isSquashing = true;
         float t = 0f;
         Vector3 scale = new Vector3();
@@ -62,6 +63,7 @@ public class Squashable : MonoBehaviour {
 
     public IEnumerator Reflate() {
         yield return new WaitForSeconds(2f);
+        AkSoundEngine.PostEvent("gonfler", gameObject);
 
         float t = 0f;
         Vector3 scale = new Vector3();
