@@ -3,6 +3,7 @@ using UnityEngine;
 namespace SplatterSystem.Isometric {
     [RequireComponent(typeof(Rigidbody))]
     [RequireComponent(typeof(Collider))]
+
     public class UserCharacterController : MonoBehaviour {
         public float speed = 14f;
         public float acceleration = 6f;
@@ -16,8 +17,7 @@ namespace SplatterSystem.Isometric {
         }
 
         protected virtual void Update() {
-            input.x = Input.GetAxis("Horizontal");
-            input.z = Input.GetAxis("Vertical");
+            input.z = 1;
         }
 
         void FixedUpdate() {
