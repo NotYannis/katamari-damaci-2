@@ -2618,6 +2618,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1702477824}
+  terrainMat: {fileID: 2100000, guid: 5d5987f37b1f9aa43a1bccf7f54695e5, type: 2}
+  mesh: {fileID: 1056709144981946, guid: f6ee90f5bc82d6c488e8b4f6db00cba5, type: 2}
 --- !u!4 &2049514865
 Transform:
   m_ObjectHideFlags: 0
