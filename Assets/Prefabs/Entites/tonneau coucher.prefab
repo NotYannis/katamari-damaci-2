@@ -19,8 +19,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4685276420475720}
-  - component: {fileID: 54908347999858904}
-  - component: {fileID: 114242975160909930}
   m_Layer: 0
   m_Name: tonneau coucher
   m_TagString: Untagged
@@ -39,6 +37,8 @@ GameObject:
   - component: {fileID: 33968027607371670}
   - component: {fileID: 23722573552477652}
   - component: {fileID: 64472198400287740}
+  - component: {fileID: 54267935243127458}
+  - component: {fileID: 114217020459876744}
   m_Layer: 0
   m_Name: poly_surface (1)
   m_TagString: Untagged
@@ -114,12 +114,12 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1595931761721942}
   m_Mesh: {fileID: 4300010, guid: f43c1b313e8225240b4ef6cfc6c29c39, type: 3}
---- !u!54 &54908347999858904
+--- !u!54 &54267935243127458
 Rigidbody:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1582195552334220}
+  m_GameObject: {fileID: 1595931761721942}
   serializedVersion: 2
   m_Mass: 50
   m_Drag: 0
@@ -143,12 +143,12 @@ MeshCollider:
   m_InflateMesh: 0
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300010, guid: f43c1b313e8225240b4ef6cfc6c29c39, type: 3}
---- !u!114 &114242975160909930
+--- !u!114 &114217020459876744
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1582195552334220}
+  m_GameObject: {fileID: 1595931761721942}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 642a3362a1cde394c9199c3a943f8482, type: 3}

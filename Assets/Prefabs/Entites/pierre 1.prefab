@@ -19,8 +19,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4566318310031670}
-  - component: {fileID: 54867188247123054}
-  - component: {fileID: 114292717147993622}
   m_Layer: 0
   m_Name: pierre 1
   m_TagString: Untagged
@@ -39,6 +37,8 @@ GameObject:
   - component: {fileID: 33139966130108980}
   - component: {fileID: 23407758508816072}
   - component: {fileID: 64631702417601204}
+  - component: {fileID: 54307811214098500}
+  - component: {fileID: 114188468383118718}
   m_Layer: 0
   m_Name: pCube1
   m_TagString: Untagged
@@ -114,12 +114,12 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1265841376507862}
   m_Mesh: {fileID: 4300004, guid: f43c1b313e8225240b4ef6cfc6c29c39, type: 3}
---- !u!54 &54867188247123054
+--- !u!54 &54307811214098500
 Rigidbody:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1223205295986332}
+  m_GameObject: {fileID: 1265841376507862}
   serializedVersion: 2
   m_Mass: 50
   m_Drag: 0
@@ -143,12 +143,12 @@ MeshCollider:
   m_InflateMesh: 0
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300004, guid: f43c1b313e8225240b4ef6cfc6c29c39, type: 3}
---- !u!114 &114292717147993622
+--- !u!114 &114188468383118718
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1223205295986332}
+  m_GameObject: {fileID: 1265841376507862}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 642a3362a1cde394c9199c3a943f8482, type: 3}

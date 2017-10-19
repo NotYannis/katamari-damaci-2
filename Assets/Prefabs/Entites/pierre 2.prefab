@@ -19,7 +19,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4379981367442818}
-  - component: {fileID: 54667788618036142}
   m_Layer: 0
   m_Name: pierre 2
   m_TagString: Untagged
@@ -38,6 +37,7 @@ GameObject:
   - component: {fileID: 33647693735375500}
   - component: {fileID: 23252057582230940}
   - component: {fileID: 64530216705212604}
+  - component: {fileID: 54430018416475542}
   m_Layer: 0
   m_Name: pCube2
   m_TagString: Untagged
@@ -113,12 +113,12 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1486321151742266}
   m_Mesh: {fileID: 4300006, guid: f43c1b313e8225240b4ef6cfc6c29c39, type: 3}
---- !u!54 &54667788618036142
+--- !u!54 &54430018416475542
 Rigidbody:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1156740411023028}
+  m_GameObject: {fileID: 1486321151742266}
   serializedVersion: 2
   m_Mass: 500
   m_Drag: 0
