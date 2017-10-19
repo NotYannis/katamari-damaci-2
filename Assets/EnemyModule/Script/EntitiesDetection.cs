@@ -41,13 +41,17 @@ public class EntitiesDetection : MonoBehaviour {
 		}
 		z *= speed;
 
-		this.transform.position = new Vector3 (this.transform.position.x+x, this.transform.position.y, this.transform.position.z+ z);
-
+		if (jump)
+			this.transform.position = new Vector3 (this.transform.position.x + x, this.transform.position.y, this.transform.position.z + z);
+		else
+			this.GetComponent<Rigidbody> ().AddForce (1000*x, 0, 1000*z);
+			
 		if((x!=0 || z!=0) && !isJumping && jump)
 		{
 			GetComponent<Rigidbody>().AddForce(new Vector3(0, 1000, 0), ForceMode.Impulse);
 			isJumping = true;
 		}
+		//this.transform.rotation = new Quaternion (0, 0, 0, 1);
 	}
 
 	void OnCollisionEnter (Collision hit)

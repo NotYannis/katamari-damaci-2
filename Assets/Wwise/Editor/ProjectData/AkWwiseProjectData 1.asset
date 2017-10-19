@@ -8,10 +8,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
+
+  m_Script: {fileID: 11500000, guid: 5bf784e9635559f45ae943dff7cc3d4f, type: 3}
   m_Name: AkWwiseProjectData 1
-  m_EditorClassIdentifier: Assembly-CSharp-Editor::AkWwiseProjectData
-  CurrentPluginConfig: 
+  m_EditorClassIdentifier:
+  CurrentPluginConfig:
   EventWwu: []
   AuxBusWwu: []
   StateWwu: []
@@ -23,6 +24,7 @@ MonoBehaviour:
   m_lastPopulateTimePsrt1: 0
   m_lastPopulateTimePart2: 0
   autoPopulateEnabled: 1
+
   basePath: Audio\GeneratedSoundBanks
   language: English(US)
   defaultPoolSize: 4096

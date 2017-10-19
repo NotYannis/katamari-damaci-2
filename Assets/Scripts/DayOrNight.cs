@@ -12,10 +12,12 @@ public class DayOrNight : MonoBehaviour {
         if(Random.Range(0, 2) == 0)
         {
             RenderSettings.skybox = dayBox;
+            SoundManager.instance.SetCycle("day");
         }
         else
         {
             RenderSettings.skybox = nightBox;
+            SoundManager.instance.SetCycle("night");
         }
 	}
 	

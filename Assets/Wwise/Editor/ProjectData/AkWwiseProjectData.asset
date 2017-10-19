@@ -12,13 +12,214 @@ MonoBehaviour:
   m_Name: AkWwiseProjectData
   m_EditorClassIdentifier: 
   CurrentPluginConfig: 
-  EventWwu: []
-  AuxBusWwu: []
-  StateWwu: []
-  SwitchWwu: []
-  BankWwu: []
-  RtpcWwu: []
-  TriggerWwu: []
+  EventWwu:
+  - PhysicalPath: Events\Default Work Unit.wwu
+    ParentPhysicalPath: 
+    Guid: '{68292999-CBFA-4C1F-ABF8-FEEB7B497E5F}'
+    m_lastTimePsrt1: -2041027824
+    m_lastTimePart2: -1999300878
+    List:
+    - Name: ambiance
+      Path: Default Work Unit\ambiance
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: ambiance
+        ObjectType: 3
+      ID: -1313589867
+      Guid: f062a73aa784ab478f6add77fd9774ae
+      maxAttenuation: 0
+    - Name: ecraser
+      Path: Default Work Unit\ecraser
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: ecraser
+        ObjectType: 3
+      ID: -1509743368
+      Guid: d0d3de416fd14a45b07cf3883b370dc0
+      maxAttenuation: 100
+    - Name: gonfler
+      Path: Default Work Unit\gonfler
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: gonfler
+        ObjectType: 3
+      ID: -896832600
+      Guid: d1c30903c037fa4485dac6c2ebe16ce6
+      maxAttenuation: 100
+    - Name: music_switch
+      Path: Default Work Unit\music_switch
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: music_switch
+        ObjectType: 3
+      ID: -1570097955
+      Guid: e1a39f231036694daa622541777d4776
+      maxAttenuation: 0
+    - Name: roule_eau
+      Path: Default Work Unit\roule_eau
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: roule_eau
+        ObjectType: 3
+      ID: 1000013658
+      Guid: 86b89c9f8846ca408043baa6c3113257
+      maxAttenuation: 0
+    - Name: roule_feuille
+      Path: Default Work Unit\roule_feuille
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: roule_feuille
+        ObjectType: 3
+      ID: 321915247
+      Guid: 10b00c9f8ae9664f93f2677bb556e0bf
+      maxAttenuation: 0
+    - Name: roule_herbe
+      Path: Default Work Unit\roule_herbe
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: roule_herbe
+        ObjectType: 3
+      ID: 379428675
+      Guid: 67f25f1b3118704391785072a81609f1
+      maxAttenuation: 0
+    - Name: volume_music_control
+      Path: Default Work Unit\volume_music_control
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: volume_music_control
+        ObjectType: 3
+      ID: -817119259
+      Guid: 48fd235596e5204c84743004a62bbf3c
+      maxAttenuation: 0
+    - Name: volume_sfx_control
+      Path: Default Work Unit\volume_sfx_control
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: volume_sfx_control
+        ObjectType: 3
+      ID: 83106753
+      Guid: 1430fcadd000264dbdb3224fab3dde2e
+      maxAttenuation: 0
+  AuxBusWwu:
+  - PhysicalPath: Master-Mixer Hierarchy\Default Work Unit.wwu
+    ParentPhysicalPath: 
+    Guid: '{B7DC1BD1-661D-4219-92AA-026B25D6B2FE}'
+    m_lastTimePsrt1: -601019138
+    m_lastTimePart2: -1999300876
+    List: []
+  StateWwu:
+  - PhysicalPath: States\Default Work Unit.wwu
+    ParentPhysicalPath: 
+    Guid: '{AFEDAB0C-EDED-49AF-B570-567F419C3E63}'
+    m_lastTimePsrt1: 1820106928
+    m_lastTimePart2: -1999301309
+    List: []
+  SwitchWwu:
+  - PhysicalPath: Switches\Default Work Unit.wwu
+    ParentPhysicalPath: 
+    Guid: '{0B6FBEDD-7129-4FA2-8476-F93998F9DFD7}'
+    m_lastTimePsrt1: -2040917716
+    m_lastTimePart2: -1999300878
+    List:
+    - Name: ambiance
+      Path: Default Work Unit\ambiance
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: ambiance
+        ObjectType: 11
+      ID: -1313589867
+      Guid: 6297f50b70ec4f4c81994a0dae7e4cc1
+      values:
+      - jour
+      - nuit
+      ValueIcons:
+      - ElementName: jour
+        ObjectType: 10
+      - ElementName: nuit
+        ObjectType: 10
+      valueIDs: 9d3f40e865d2bc2b
+      ValueGuids:
+      - bytes: a96e955a76d70f49863eddb583fa52be
+      - bytes: 70b110dce402614498d93de253c9c369
+    - Name: music
+      Path: Default Work Unit\music
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: music
+        ObjectType: 11
+      ID: -303024426
+      Guid: 98708fa322dc7748a44e7f4a6d8b6999
+      values:
+      - jour
+      - nuit
+      ValueIcons:
+      - ElementName: jour
+        ObjectType: 10
+      - ElementName: nuit
+        ObjectType: 10
+      valueIDs: 9d3f40e865d2bc2b
+      ValueGuids:
+      - bytes: be80865757f1d24c8e1c3fc4eedf782e
+      - bytes: 4b0f79b7c3de0845a73bece52139ebc1
+  BankWwu:
+  - PhysicalPath: SoundBanks\Default Work Unit.wwu
+    ParentPhysicalPath: 
+    Guid: '{37D6B896-1A50-445B-A984-120602F59122}'
+    m_lastTimePsrt1: -1140253003
+    m_lastTimePart2: -1999300875
+    List:
+    - Name: New_SoundBank
+      Path: Default Work Unit\New_SoundBank
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: New_SoundBank
+        ObjectType: 7
+      ID: -222937841
+      Guid: bde59a8a54d17b4fb454a0b6b4dce22e
+  RtpcWwu:
+  - PhysicalPath: Game Parameters\Default Work Unit.wwu
+    ParentPhysicalPath: 
+    Guid: '{A1E9D593-E353-47D8-8D51-712D1A117028}'
+    m_lastTimePsrt1: -2041007801
+    m_lastTimePart2: -1999300878
+    List:
+    - Name: Volume_control
+      Path: Default Work Unit\Volume_control
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Volume_control
+        ObjectType: 13
+      ID: -100150403
+      Guid: 6ea67096c46bed4aacb40c90dec217d5
+    - Name: volume_control_music
+      Path: Default Work Unit\volume_control_music
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: volume_control_music
+        ObjectType: 13
+      ID: -1472617639
+      Guid: 1e7b48858db14f4a816e98e638beb060
+  TriggerWwu:
+  - PhysicalPath: Triggers\Default Work Unit.wwu
+    ParentPhysicalPath: 
+    Guid: '{D76E8F6E-F5D8-4F64-9939-831AC112A081}'
+    m_lastTimePsrt1: 1820292091
+    m_lastTimePart2: -1999301309
+    List: []
   ExpandedItems: []
   m_lastPopulateTimePsrt1: 0
   m_lastPopulateTimePart2: 0

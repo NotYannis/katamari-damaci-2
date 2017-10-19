@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour {
 
     private Rigidbody rigidbody;
+    private Vector3 maxSpeed;
     
     // The force value added to the rigidbody of the ball to move it faster or slower
     public int speed = 1;
@@ -17,7 +18,7 @@ public class PlayerController : MonoBehaviour {
 
     private void Update()
     {
-        transform.RotateAround(transform.position, Vector3.up, Input.GetAxis("Mouse X"));
+        transform.RotateAround(transform.position, Camera.main.transform.right, rigidbody.velocity.magnitude);
     }
 
     // Move the ball by adding force to its rigidbody along the forward vector of the camera (always forward the player's view).
@@ -26,4 +27,7 @@ public class PlayerController : MonoBehaviour {
         rigidbody.AddForce(vectorForward * 100 * speed);
     }
 
+    private void LateUpdate() {
+        rigidbody.velocity = Vector3.ClampMagnitude(rigidbody.velocity, 15);
+    }
 }
