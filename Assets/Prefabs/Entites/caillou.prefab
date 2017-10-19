@@ -20,6 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4921324054941604}
   - component: {fileID: 54301713959198794}
+  - component: {fileID: 114679706404271072}
   m_Layer: 0
   m_Name: caillou
   m_TagString: Untagged
@@ -142,3 +143,14 @@ MeshCollider:
   m_InflateMesh: 0
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300008, guid: f43c1b313e8225240b4ef6cfc6c29c39, type: 3}
+--- !u!114 &114679706404271072
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1038909144087120}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee82862b838e7d34da83cce6c6e9d163, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

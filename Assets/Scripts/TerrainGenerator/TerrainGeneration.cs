@@ -129,6 +129,25 @@ public class TerrainGeneration : MonoBehaviour {
 		{
 			GetChunks(player.transform.position, terrainSize);
 			Generate();
+            Vector3Int playerpos = GetChunkPosition(player.transform.position);
+            TerrainChunk chunk;
+            chunkLoaded.TryGetValue(playerpos, out chunk);
+            if(chunk != null)
+            {
+                switch (chunk.type)
+                {
+                    case TerrainType.Dirt:
+                    case TerrainType.Grass:
+                        EventManager.TriggerEvent("OnPlayerEnterGrass");
+                        break;
+                    case TerrainType.Water:
+                        EventManager.TriggerEvent("OnPlayerEnterWater");
+                        break;
+                    case TerrainType.Leaves:
+                        EventManager.TriggerEvent("OnPlayerEnterLeaf");
+                        break;
+                }
+            }
 		}
 	}
 

@@ -38,6 +38,7 @@ GameObject:
   - component: {fileID: 4081859981398484}
   - component: {fileID: 54187351561451232}
   - component: {fileID: 65685135876774348}
+  - component: {fileID: 114645029995580888}
   m_Layer: 0
   m_Name: arbre 2
   m_TagString: Untagged
@@ -140,3 +141,14 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.36, y: 2.63, z: 1.31}
   m_Center: {x: 0.09, y: 1.28, z: -0.09}
+--- !u!114 &114645029995580888
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1856742990969172}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee82862b838e7d34da83cce6c6e9d163, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

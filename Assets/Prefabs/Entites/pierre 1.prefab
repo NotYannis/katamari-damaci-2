@@ -39,6 +39,7 @@ GameObject:
   - component: {fileID: 64631702417601204}
   - component: {fileID: 54307811214098500}
   - component: {fileID: 114188468383118718}
+  - component: {fileID: 114193367753437036}
   m_Layer: 0
   m_Name: pCube1
   m_TagString: Untagged
@@ -157,3 +158,14 @@ MonoBehaviour:
   speed: 10
   detectionDistance: 30
   jump: 0
+--- !u!114 &114193367753437036
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1265841376507862}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee82862b838e7d34da83cce6c6e9d163, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
