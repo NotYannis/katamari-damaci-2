@@ -102,7 +102,7 @@ public enum TerrainType
 }
 
 public class TerrainGeneration : MonoBehaviour {
-	private int terrainSize;
+	public int terrainSize = 4;
 	public GameObject player;
 	private Vector3Int position;
 	private Vector3Int lastPosition;
@@ -119,7 +119,7 @@ public class TerrainGeneration : MonoBehaviour {
 		settings = new TerrainChunkSettings(129, 129, 100, 0, this.gameObject);
 		lastPosition = Vector3Int.down;
 		position = GetChunkPosition(player.transform.position);
-		GetChunks(player.transform.position, 5);
+		GetChunks(player.transform.position, terrainSize);
 		Generate();
 	}
 
@@ -127,7 +127,7 @@ public class TerrainGeneration : MonoBehaviour {
 	void Update () {
 		if (IsOnNewChunkPosition())
 		{
-			GetChunks(player.transform.position, 5);
+			GetChunks(player.transform.position, terrainSize);
 			Generate();
 		}
 	}

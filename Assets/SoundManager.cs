@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class SoundManager : MonoBehaviour {
+    static public SoundManager instance;
 
 	void Start () {
         AkSoundEngine.PostEvent("music_switch", gameObject);
@@ -12,6 +13,14 @@ public class SoundManager : MonoBehaviour {
         EventManager.StartListening("OnPlayerEnterWater", OnWater);
         EventManager.StartListening("OnPlayerEnterGrass", OnGrass);
         EventManager.StartListening("OnPlayerEnterLeaf", OnLeaf);
+        if(instance != null)
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            instance = this;
+        }
     }
 
     void OnWater() {
@@ -40,7 +49,7 @@ public class SoundManager : MonoBehaviour {
         AkSoundEngine.SetRTPCValue("Volume_control", volume);
     }
 
-    void SetCycle(string state) {
+    public void SetCycle(string state) {
         switch(state) {
             case "day":
                 AkSoundEngine.SetSwitch("music", "jour", gameObject);
