@@ -101,7 +101,7 @@ public class TerrainGeneration : MonoBehaviour {
 	public GameObject[] terrains = new GameObject[4];
 
 	// Use this for initialization
-	void Start () {
+	void Awake () {
         splatterColorManager = GameObject.Find("SplatterSystem").GetComponent<ChangerColorSplatter>();
 
 		settings = new TerrainChunkSettings(129, 129, 100, 0, this.gameObject);
