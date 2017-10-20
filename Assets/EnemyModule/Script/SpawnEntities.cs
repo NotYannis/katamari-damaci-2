@@ -26,7 +26,7 @@ public class SpawnEntities : MonoBehaviour {
 				foreach (GameObject e in entities) {
 					for (int i = 0; i < 1; i++) {
 						GameObject g = Instantiate (e);
-						g.transform.position = new Vector3 (Random.Range (minT.x, maxT.x), player.transform.position.y, Random.Range (minT.y, maxT.y));
+						g.transform.position = new Vector3 (Random.Range (minT.x, maxT.x), t.Value.Terrain.transform.position.y, Random.Range (minT.y, maxT.y));
 						g.transform.SetParent (t.Value.Terrain.transform);
 					}
 				}
