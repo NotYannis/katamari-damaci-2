@@ -106,7 +106,7 @@ public class TerrainGeneration : MonoBehaviour {
 		position = GetChunkPosition(player.transform.position);
 		GetChunks(player.transform.position, terrainSize);
 		Generate();
-	}
+    }
 
 	// Update is called once per frame
 	void Update () {
@@ -115,14 +115,11 @@ public class TerrainGeneration : MonoBehaviour {
 			GetChunks(player.transform.position, terrainSize);
 			Generate();
 
-            Vector3Int playerpos = new Vector3Int((int)(player.transform.position.x + settings.Length / 2), (int)player.transform.position.y, (int)(player.transform.position.z - settings.Length / 2));
-            playerpos = GetChunkPosition(transform.position);
-            print("Player :" + playerpos);
+            Vector3Int playerpos = GetPlayerChunkPosition();
             TerrainChunk chunk;
             chunkLoaded.TryGetValue(playerpos, out chunk);
             if(chunk != null)
             {
-                print("chunk" + chunk.Terrain.transform.position);
                 if(chunk.type != lastChunkType){
                     switch (chunk.type)
                     {
@@ -147,7 +144,6 @@ public class TerrainGeneration : MonoBehaviour {
 	TerrainChunk GenerateChunk(int x, int z)
 	{
         int terrainType = Random.Range(0, terrains.Length);
-
 
 		var terrain = new TerrainChunk(settings, (TerrainType)terrainType, x, z, terrains[terrainType]);
 
@@ -228,8 +224,7 @@ public class TerrainGeneration : MonoBehaviour {
 		bool result = false;
 
 		lastPosition = position;
-        position = new Vector3Int((int)(player.transform.position.x - settings.Length / 2), (int)player.transform.position.y, (int)(player.transform.position.z - settings.Length / 2));
-		position = GetChunkPosition(position);
+        position = GetPlayerChunkPosition();
 
         if (lastPosition != position)
 		{
@@ -238,6 +233,11 @@ public class TerrainGeneration : MonoBehaviour {
 
 		return result;
 	}
+
+    public Vector3Int GetPlayerChunkPosition()
+    {
+        return GetChunkPosition(new Vector3(player.transform.position.x + settings.Length / 2, player.transform.position.y, player.transform.position.z + settings.Length / 2));
+    }
 
 
 }
