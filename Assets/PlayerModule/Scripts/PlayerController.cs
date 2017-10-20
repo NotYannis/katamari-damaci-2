@@ -37,7 +37,10 @@ public class PlayerController : MonoBehaviour {
     private void Update()
 	{
 		transform.RotateAround(transform.position, Camera.main.transform.right, rigidbody.velocity.magnitude);
-		if(myscript.mode) Miniaturisation ();
+        if(myscript != null)
+        {
+		    if(myscript.mode) Miniaturisation ();
+        }
 
     }
 

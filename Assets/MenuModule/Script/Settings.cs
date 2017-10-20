@@ -20,7 +20,6 @@ public class Settings : MonoBehaviour {
     {
         speedBall = speed.value*20;
         if (speedBall < 3) speedBall = 3;
-        Debug.Log(speedBall);
     }
     public void SetSpeedCamera(Slider speed)
     {

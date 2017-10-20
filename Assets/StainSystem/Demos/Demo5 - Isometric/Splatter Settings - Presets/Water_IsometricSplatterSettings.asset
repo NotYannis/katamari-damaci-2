@@ -39,7 +39,7 @@ MonoBehaviour:
   brightnessVariation: 0
   hueVariation: 0
   saturationVariation: 0
-  particleMode: 0
+  particleMode: 3
   particleTexture: {fileID: 2800000, guid: c006ab37b4937483a873093786c64bd6, type: 3}
   particleMaterial: {fileID: 0}
   maxParticles: 20000
