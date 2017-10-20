@@ -28,7 +28,15 @@ public class SpawnEntities : MonoBehaviour {
 						GameObject g = Instantiate (e);
 						g.transform.position = new Vector3 (Random.Range (minT.x, maxT.x), t.Value.Terrain.transform.position.y, Random.Range (minT.y, maxT.y));
 						g.transform.SetParent (t.Value.Terrain.transform);
-					}
+                        if(g.GetComponentsInChildren<EntitiesDetection>().Length != 0)
+                        {
+                            if(g.GetComponentsInChildren<EntitiesDetection>()[0] != null)
+                            {
+                                g.GetComponentsInChildren<EntitiesDetection>()[0].enabled = false;
+                                g.GetComponentsInChildren<Rigidbody>()[0].isKinematic = true;
+                            }
+                        }
+                    }
 				}
 				t.Value.entitiesLoaded = true;
 			}
