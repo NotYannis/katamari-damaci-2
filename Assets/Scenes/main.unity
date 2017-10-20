@@ -647,7 +647,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4849438118339238, guid: 211fc0f177d5f844da0172710e3b23fe, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4849438118339238, guid: 211fc0f177d5f844da0172710e3b23fe, type: 2}
       propertyPath: m_LocalPosition.z
@@ -682,9 +682,15 @@ Prefab:
         type: 2}
       propertyPath: m_Mass
       value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 1072916883706990, guid: 211fc0f177d5f844da0172710e3b23fe, type: 2}
       propertyPath: m_TagString
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 54664875940892986, guid: 211fc0f177d5f844da0172710e3b23fe,
+        type: 2}
+      propertyPath: m_Constraints
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 211fc0f177d5f844da0172710e3b23fe, type: 2}
@@ -1790,6 +1796,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 1702477824}
   speedRotationCamera: 10
+  horizontalAxisRotation: 1
 --- !u!114 &1322680572
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2973,12 +2980,12 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1996651764}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cb7e698b9de7c414fa76a09e9ad2337d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  terrain: {fileID: 2049514864}
+  terrain: {fileID: 0}
 --- !u!1 &2003339716
 GameObject:
   m_ObjectHideFlags: 0
