@@ -678,6 +678,10 @@ Prefab:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1072916883706990, guid: 211fc0f177d5f844da0172710e3b23fe, type: 2}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 211fc0f177d5f844da0172710e3b23fe, type: 2}
   m_IsPrefabParent: 0
@@ -1597,6 +1601,7 @@ GameObject:
   - component: {fileID: 1220749062}
   - component: {fileID: 1220749060}
   - component: {fileID: 1220749061}
+  - component: {fileID: 1220749063}
   m_Layer: 0
   m_Name: WwiseGlobal
   m_TagString: Untagged
@@ -1650,6 +1655,25 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1220749063
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1220749059}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c19b9606180d3047bd8eab48f9d6cd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggerList: f7e1664c
+  useOtherObject: 0
+  valueGuid: bde59a8a54d17b4fb454a0b6b4dce22e
+  bankName: New_SoundBank
+  loadAsynchronous: 0
+  decodeBank: 0
+  saveDecodedBank: 0
+  unloadTriggerList: 958ca0ea
 --- !u!1 &1322680566
 GameObject:
   m_ObjectHideFlags: 0
@@ -2375,6 +2399,18 @@ GameObject:
   m_PrefabParentObject: {fileID: 1072916883706990, guid: 211fc0f177d5f844da0172710e3b23fe,
     type: 2}
   m_PrefabInternal: {fileID: 283751584}
+--- !u!135 &1702477825
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1702477824}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &1702477832
 MonoBehaviour:
   m_ObjectHideFlags: 0

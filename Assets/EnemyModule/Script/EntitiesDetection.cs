@@ -10,12 +10,14 @@ public class EntitiesDetection : MonoBehaviour {
 	public int detectionDistance = 20;
 	public bool jump = false;
 	private bool isJumping = false;
+    Rigidbody rig;
 
 	// Use this for initialization
 	void Start () 
 	{
 		PlayerController[] persoTmp = FindObjectsOfType(typeof(PlayerController)) as PlayerController[];
 		perso = persoTmp[0].gameObject;
+        rig = GetComponent<Rigidbody>();
 	}
 	
 	// Update is called once per frame
@@ -44,11 +46,11 @@ public class EntitiesDetection : MonoBehaviour {
 		if (jump)
 			this.transform.position = new Vector3 (this.transform.position.x + x, this.transform.position.y, this.transform.position.z + z);
 		else
-			this.GetComponent<Rigidbody> ().AddForce (1000*x, 0, 1000*z);
+			rig.AddForce (1000*x, 0, 1000*z);
 			
 		if((x!=0 || z!=0) && !isJumping && jump)
 		{
-			GetComponent<Rigidbody>().AddForce(new Vector3(0, 1000, 0), ForceMode.Impulse);
+			rig.AddForce(new Vector3(0, 1000, 0), ForceMode.Impulse);
 			isJumping = true;
 		}
 		//this.transform.rotation = new Quaternion (0, 0, 0, 1);

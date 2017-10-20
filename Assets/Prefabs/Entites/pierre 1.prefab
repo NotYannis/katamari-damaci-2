@@ -155,5 +155,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
-  detectionDistance: 30
+  detectionDistance: 40
   jump: 0
