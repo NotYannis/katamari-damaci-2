@@ -53,19 +53,16 @@ public class TerrainChunk {
 	public GameObject Terrain { get; set; }
 	private TerrainChunkSettings Settings { get; set; }
 
-	private NoiseProvider NoiseProvider { get; set; }
 	public bool entitiesLoaded = false;
 
     public TerrainType type;
 
-	public TerrainChunk(TerrainChunkSettings _settings, NoiseProvider _noise, TerrainType _type, int _x, int _z, GameObject _terrain)
+	public TerrainChunk(TerrainChunkSettings _settings, TerrainType _type, int _x, int _z, GameObject _terrain)
 	{
 		Settings = _settings;
-		NoiseProvider = _noise;
 		Position = new Vector3Int(_x, 0, _z);
 		Terrain = _terrain;
         type = _type;
-        
 	}
 
 	public void CreateTerrain()
@@ -83,24 +80,9 @@ public class TerrainChunk {
 	}
 }
 
-public class NoiseProvider : INoiseProvider
-{
-	private Perlin PerlinNoiseGenerator;
-
-	public NoiseProvider()
-	{
-		PerlinNoiseGenerator = new Perlin();
-	}
-
-	public float GetValue(float x, float z)
-	{
-		return (float)(PerlinNoiseGenerator.GetValue(x, 0, z) / 2f) + 0.5f;
-	}
-}
-
 public enum TerrainType
 {
-    Grass, Water, Dirt, Leaves
+    Dirt, Grass, Leaves, Water
 }
 
 public class TerrainGeneration : MonoBehaviour {
@@ -109,6 +91,7 @@ public class TerrainGeneration : MonoBehaviour {
 	private Vector3Int position;
 	private Vector3Int lastPosition;
 	private TerrainChunkSettings settings;
+    private TerrainType lastChunkType;
 
 	internal Dictionary<Vector3Int, TerrainChunk> chunkLoaded = new Dictionary<Vector3Int, TerrainChunk>();
 	private Dictionary<Vector3Int, TerrainChunk> requestedChunks = new Dictionary<Vector3Int, TerrainChunk>();
@@ -123,7 +106,7 @@ public class TerrainGeneration : MonoBehaviour {
 		position = GetChunkPosition(player.transform.position);
 		GetChunks(player.transform.position, terrainSize);
 		Generate();
-	}
+    }
 
 	// Update is called once per frame
 	void Update () {
@@ -131,25 +114,30 @@ public class TerrainGeneration : MonoBehaviour {
 		{
 			GetChunks(player.transform.position, terrainSize);
 			Generate();
-            Vector3Int playerpos = GetChunkPosition(player.transform.position);
+
+            Vector3Int playerpos = GetPlayerChunkPosition();
             TerrainChunk chunk;
             chunkLoaded.TryGetValue(playerpos, out chunk);
             if(chunk != null)
             {
-                switch (chunk.type)
-                {
-                    case TerrainType.Dirt:
-                    case TerrainType.Grass:
-                        EventManager.TriggerEvent("OnPlayerEnterGrass");
-                        break;
-                    case TerrainType.Water:
-                        EventManager.TriggerEvent("OnPlayerEnterWater");
-                        break;
-                    case TerrainType.Leaves:
-                        EventManager.TriggerEvent("OnPlayerEnterLeaf");
-                        break;
+                if(chunk.type != lastChunkType){
+                    switch (chunk.type)
+                    {
+                        case TerrainType.Dirt:
+                        case TerrainType.Grass:
+                            EventManager.TriggerEvent("OnPlayerEnterGrass");
+                            break;
+                        case TerrainType.Water:
+                            EventManager.TriggerEvent("OnPlayerEnterWater");
+                            break;
+                        case TerrainType.Leaves:
+                            EventManager.TriggerEvent("OnPlayerEnterLeaf");
+                            break;
+                    }
                 }
+                lastChunkType = chunk.type;
             }
+
 		}
 	}
 
@@ -157,9 +145,7 @@ public class TerrainGeneration : MonoBehaviour {
 	{
         int terrainType = Random.Range(0, terrains.Length);
 
-		var noiseProvider = new NoiseProvider();
-
-		var terrain = new TerrainChunk(settings, noiseProvider, (TerrainType)terrainType, x, z, terrains[terrainType]);
+		var terrain = new TerrainChunk(settings, (TerrainType)terrainType, x, z, terrains[terrainType]);
 
 		return terrain;
 	}
@@ -223,7 +209,6 @@ public class TerrainGeneration : MonoBehaviour {
 		}
 
 		removeChunk.Clear();
-
 	}
 
 
@@ -231,7 +216,6 @@ public class TerrainGeneration : MonoBehaviour {
 	{
 		var x = (int)Mathf.Floor(worldPosition.x / settings.Length);
 		var z = (int)Mathf.Floor(worldPosition.z / settings.Length);
-
 		return new Vector3Int(x, 0, z);
 	}
 
@@ -240,15 +224,20 @@ public class TerrainGeneration : MonoBehaviour {
 		bool result = false;
 
 		lastPosition = position;
-		position = GetChunkPosition(player.transform.position);
+        position = GetPlayerChunkPosition();
 
-		if(lastPosition != position)
+        if (lastPosition != position)
 		{
 			result = true;
 		}
 
 		return result;
 	}
+
+    public Vector3Int GetPlayerChunkPosition()
+    {
+        return GetChunkPosition(new Vector3(player.transform.position.x + settings.Length / 2, player.transform.position.y, player.transform.position.z + settings.Length / 2));
+    }
 
 
 }

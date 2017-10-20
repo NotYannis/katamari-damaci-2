@@ -5,9 +5,11 @@ using UnityEngine;
 public class Squashable : MonoBehaviour {
     private bool _isSquashing = false;
     private float _squashRate = 0f;
+    private Vector3 startScale;
 
     void Start() {
         _squashRate = GameManager.squashRate;
+        startScale = transform.parent.localScale;
         EventManager.StartListening("squashValueChanged", OnValueChange);
     }
 
@@ -56,7 +58,7 @@ public class Squashable : MonoBehaviour {
         Vector3 scale = new Vector3();
 
         Vector3 baseScale = transform.parent.localScale;
-        Vector3 endScale = new Vector3(1f, 1f, 1f);
+        Vector3 endScale = startScale;
 
         while (t < 1) {
             t += Time.deltaTime / _squashRate;

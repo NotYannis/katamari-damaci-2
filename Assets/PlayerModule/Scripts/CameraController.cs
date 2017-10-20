@@ -60,7 +60,6 @@ public class CameraController : MonoBehaviour {
         
         offsetValue = Quaternion.AngleAxis(-(axisRotation * ((float)speedRotationCamera/10)), Vector3.up) * offsetValue;
 
-
         // Always keep the camera behind the player when rotation (from Mouse X input change) is made
         transform.position = player.transform.position + offsetValue;
         transform.LookAt(player.transform.position);
