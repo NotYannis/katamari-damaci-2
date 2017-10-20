@@ -10,6 +10,7 @@ public class Settings : MonoBehaviour {
     public bool mode = true;
     public bool postproc = true;
     public bool axe = true;
+    public bool controle = true;
 
     void Awake()
     {
@@ -32,12 +33,19 @@ public class Settings : MonoBehaviour {
     {
         mode = bmode;
     }
+
     public void SetPostProc(Toggle bproc)
     {
         postproc = bproc.isOn;
     }
+
     public void SetAxe(Toggle baxe)
     {
         axe = baxe.isOn;
+    }
+
+    public void SetControle(bool bcontrole)
+    {
+        controle = bcontrole;
     }
 }
