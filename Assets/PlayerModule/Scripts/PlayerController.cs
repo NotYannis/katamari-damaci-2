@@ -10,14 +10,14 @@ public class PlayerController : MonoBehaviour {
     private Vector3 maxSpeed;
     
     // The force value added to the rigidbody of the ball to move it faster or slower
-    public int speed = 180;
+    public int speed = 1;
     private Vector3 vectorForward;
 
 
 	private float startTime;
 	private Vector3 startScale=Vector3.zero;
 	private float yOrigin, yOld;
-	public float secondeInGame = 10f; 
+	public float secondeInGame = 180f; 
 	public SplatterUserCharacterController splatter;
 	private Settings myscript;
 

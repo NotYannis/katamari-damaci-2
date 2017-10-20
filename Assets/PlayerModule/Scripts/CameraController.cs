@@ -20,7 +20,10 @@ public class CameraController : MonoBehaviour {
         {
             Settings myscript = data.GetComponent<Settings>();
             speedRotationCamera = (int)myscript.speedCamera;
-            horizontalAxisRotation = !myscript.axe;
+
+            horizontalAxisRotation = myscript.axe;
+            GetComponent<PostProcessVolumeReceiver>().enabled = myscript.postproc;
+
         }
     }
 
