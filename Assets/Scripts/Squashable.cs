@@ -23,7 +23,7 @@ public class Squashable : MonoBehaviour {
     public void OnCollisionEnter(Collision collision) {
         if(collision.gameObject.tag == "Player") {
             if (!_isSquashing) {
-                Destroy(GetComponent<Collider>());
+                GetComponent<Collider>().enabled = false;
                 StartCoroutine(SquashEffect());
             }
         }
@@ -45,7 +45,6 @@ public class Squashable : MonoBehaviour {
             yield return null;
         }
 
-        gameObject.AddComponent<MeshCollider>().convex = true;
         StartCoroutine(Reflate());
     }
 
@@ -65,5 +64,8 @@ public class Squashable : MonoBehaviour {
             transform.parent.localScale = scale;
             yield return null;
         }
+
+        GetComponent<Collider>().enabled = true;
+        _isSquashing = false;
     }
 }
