@@ -92,6 +92,7 @@ public class TerrainGeneration : MonoBehaviour {
 	private Vector3Int lastPosition;
 	private TerrainChunkSettings settings;
     private TerrainType lastChunkType;
+    private ChangerColorSplatter splatterColorManager;
 
 	internal Dictionary<Vector3Int, TerrainChunk> chunkLoaded = new Dictionary<Vector3Int, TerrainChunk>();
 	private Dictionary<Vector3Int, TerrainChunk> requestedChunks = new Dictionary<Vector3Int, TerrainChunk>();
@@ -100,46 +101,67 @@ public class TerrainGeneration : MonoBehaviour {
 	public GameObject[] terrains = new GameObject[4];
 
 	// Use this for initialization
-	void Start () {
+	void Awake () {
+        splatterColorManager = GameObject.Find("SplatterSystem").GetComponent<ChangerColorSplatter>();
+
 		settings = new TerrainChunkSettings(129, 129, 100, 0, this.gameObject);
-		lastPosition = Vector3Int.down;
+        lastPosition = Vector3Int.down;
 		position = GetChunkPosition(player.transform.position);
 		GetChunks(player.transform.position, terrainSize);
 		Generate();
+
+        CheckChunk();
     }
 
 	// Update is called once per frame
 	void Update () {
-		if (IsOnNewChunkPosition())
-		{
-			GetChunks(player.transform.position, terrainSize);
-			Generate();
+        if (IsOnNewChunkPosition())
+        {
+            GetChunks(player.transform.position, terrainSize);
+            Generate();
 
-            Vector3Int playerpos = GetPlayerChunkPosition();
-            TerrainChunk chunk;
-            chunkLoaded.TryGetValue(playerpos, out chunk);
-            if(chunk != null)
-            {
-                if(chunk.type != lastChunkType){
-                    switch (chunk.type)
-                    {
-                        case TerrainType.Dirt:
-                        case TerrainType.Grass:
-                            EventManager.TriggerEvent("OnPlayerEnterGrass");
-                            break;
-                        case TerrainType.Water:
-                            EventManager.TriggerEvent("OnPlayerEnterWater");
-                            break;
-                        case TerrainType.Leaves:
-                            EventManager.TriggerEvent("OnPlayerEnterLeaf");
-                            break;
-                    }
-                }
-                lastChunkType = chunk.type;
-            }
-
-		}
+            CheckChunk();
+        }
 	}
+
+    private void CheckChunk()
+    {
+        Vector3Int playerpos = GetPlayerChunkPosition();
+        TerrainChunk chunk;
+        chunkLoaded.TryGetValue(playerpos, out chunk);
+        if (chunk != null)
+        {
+            if (chunk.type != lastChunkType)
+            {
+                switch (chunk.type)
+                {
+                    case TerrainType.Dirt:
+                        if (lastChunkType != TerrainType.Grass)
+                        {
+                            EventManager.TriggerEvent("OnPlayerEnterGrass");
+                        }
+                        break;
+                    case TerrainType.Grass:
+                        if (lastChunkType != TerrainType.Dirt)
+                        {
+                            EventManager.TriggerEvent("OnPlayerEnterGrass");
+                        }
+                        break;
+                    case TerrainType.Water:
+                        EventManager.TriggerEvent("OnPlayerEnterWater");
+                        break;
+                    case TerrainType.Leaves:
+                        EventManager.TriggerEvent("OnPlayerEnterLeaf");
+                        break;
+                }
+                if(splatterColorManager != null)
+                {
+                    splatterColorManager.ChangeColor(chunk.type);
+                }
+            }
+            lastChunkType = chunk.type;
+        }
+    }
 
 	TerrainChunk GenerateChunk(int x, int z)
 	{
