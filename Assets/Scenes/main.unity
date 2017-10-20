@@ -643,7 +643,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4849438118339238, guid: 211fc0f177d5f844da0172710e3b23fe, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -4
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4849438118339238, guid: 211fc0f177d5f844da0172710e3b23fe, type: 2}
       propertyPath: m_LocalPosition.y
@@ -651,7 +651,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4849438118339238, guid: 211fc0f177d5f844da0172710e3b23fe, type: 2}
       propertyPath: m_LocalPosition.z
-      value: -9
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4849438118339238, guid: 211fc0f177d5f844da0172710e3b23fe, type: 2}
       propertyPath: m_LocalRotation.x
@@ -2980,12 +2980,16 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1996651764}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cb7e698b9de7c414fa76a09e9ad2337d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  terrain: {fileID: 0}
+  splatterColors:
+  - {fileID: 11400000, guid: b7c8dc0f3233d49dea366d86dffe0709, type: 2}
+  - {fileID: 11400000, guid: 78d95657f30b3f242bd57aced2658edc, type: 2}
+  - {fileID: 11400000, guid: 5ee70df6c01c36148b94e9cea6d0a7bd, type: 2}
+  - {fileID: 11400000, guid: 05a590bf2661af545a3cc42670cadf22, type: 2}
 --- !u!1 &2003339716
 GameObject:
   m_ObjectHideFlags: 0
