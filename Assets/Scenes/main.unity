@@ -678,6 +678,10 @@ Prefab:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 54664875940892986, guid: 211fc0f177d5f844da0172710e3b23fe,
+        type: 2}
+      propertyPath: m_Mass
+      value: 100
     - target: {fileID: 1072916883706990, guid: 211fc0f177d5f844da0172710e3b23fe, type: 2}
       propertyPath: m_TagString
       value: Player
@@ -2959,6 +2963,22 @@ Transform:
   m_Father: {fileID: 120294954}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1996651764 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 104794, guid: f2d7aecc33ad44d6e82de57427232543, type: 2}
+  m_PrefabInternal: {fileID: 536711738}
+--- !u!114 &1996651766
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1996651764}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb7e698b9de7c414fa76a09e9ad2337d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  terrain: {fileID: 2049514864}
 --- !u!1 &2003339716
 GameObject:
   m_ObjectHideFlags: 0
