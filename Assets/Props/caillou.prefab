@@ -21,6 +21,8 @@ GameObject:
   - component: {fileID: 4363060001237740}
   - component: {fileID: 33777945482016182}
   - component: {fileID: 23530784234724366}
+  - component: {fileID: 64328376597054908}
+  - component: {fileID: 114749023311118142}
   m_Layer: 0
   m_Name: pierre
   m_TagString: Untagged
@@ -63,7 +65,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1522795052750136}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -12.9, y: 0, z: 10.3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4363060001237740}
@@ -111,3 +113,28 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1283525620722814}
   m_Mesh: {fileID: 4300008, guid: f43c1b313e8225240b4ef6cfc6c29c39, type: 3}
+--- !u!64 &64328376597054908
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1283525620722814}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 1
+  m_InflateMesh: 0
+  m_SkinWidth: 0.01
+  m_Mesh: {fileID: 4300008, guid: f43c1b313e8225240b4ef6cfc6c29c39, type: 3}
+--- !u!114 &114749023311118142
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1283525620722814}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee82862b838e7d34da83cce6c6e9d163, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
