@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using SplatterSystem.Isometric;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour {
 
@@ -8,8 +10,16 @@ public class PlayerController : MonoBehaviour {
     private Vector3 maxSpeed;
     
     // The force value added to the rigidbody of the ball to move it faster or slower
-    public int speed = 1;
+    public int speed = 180;
     private Vector3 vectorForward;
+
+
+	private float startTime;
+	private Vector3 startScale=Vector3.zero;
+	private float yOrigin, yOld;
+	public float secondeInGame = 10f; 
+	public SplatterUserCharacterController splatter;
+	private Settings myscript;
 
     private void Start()
     {
@@ -17,14 +27,18 @@ public class PlayerController : MonoBehaviour {
         GameObject data = GameObject.Find("Datasettings");
         if (data != null)
         {
-            Settings myscript = data.GetComponent<Settings>();
+            myscript = data.GetComponent<Settings>();
             speed = (int)myscript.speedBall;
         }
+		yOrigin = this.transform.position.y;
+		splatter = GetComponent<SplatterUserCharacterController> ();
     }
 
     private void Update()
-    {
-        transform.RotateAround(transform.position, Camera.main.transform.right, rigidbody.velocity.magnitude);
+	{
+		transform.RotateAround(transform.position, Camera.main.transform.right, rigidbody.velocity.magnitude);
+		if(myscript.mode) Miniaturisation ();
+
     }
 
     // Move the ball by adding force to its rigidbody along the forward vector of the camera (always forward the player's view).
@@ -60,4 +74,21 @@ public class PlayerController : MonoBehaviour {
             }
         }
     }
+
+	void Miniaturisation()
+	{
+		if(startScale==Vector3.zero) 
+			startScale = this.transform.localScale;
+		float scaleChangment = (secondeInGame - (Time.time - startTime))/secondeInGame;
+		yOld = this.transform.position.y;
+		this.transform.localScale = startScale * scaleChangment;
+		this.transform.position = new Vector3 (this.transform.position.x, yOrigin * scaleChangment, this.transform.position.z);
+		splatter.paintPositionOffset.y = splatter.paintPositionOffset.y + (yOld - this.transform.position.y);
+
+		if (this.transform.localScale.x <= 0) {
+			this.transform.localScale = startScale;
+			//SceneManager.LoadScene ("MenuScene");
+			Application.Quit();
+		}
+	}
 }
