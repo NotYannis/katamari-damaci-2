@@ -8,6 +8,7 @@ public class CameraController : MonoBehaviour {
     public GameObject player;
     private Vector3 offsetValue;
     public int speedRotationCamera = 10;
+    public bool horizontalAxisRotation = true;
 
 	void Start ()
     {
@@ -17,6 +18,7 @@ public class CameraController : MonoBehaviour {
         {
             Settings myscript = data.GetComponent<Settings>();
             speedRotationCamera = (int)myscript.speedCamera;
+            horizontalAxisRotation = myscript.axe;
         }
     }
 
@@ -36,7 +38,14 @@ public class CameraController : MonoBehaviour {
     }
 
     private void LateUpdate () {
-        offsetValue = Quaternion.AngleAxis((Input.GetAxis("Mouse X") * ((float)speedRotationCamera/10)), Vector3.up) * offsetValue;
+        float axisRotation;
+        if (horizontalAxisRotation){
+            axisRotation = Input.GetAxis("Mouse X");
+        }else
+        {
+            axisRotation = Input.GetAxis("Mouse Y");
+        }
+        offsetValue = Quaternion.AngleAxis((axisRotation * ((float)speedRotationCamera / 10)), Vector3.up) * offsetValue;
 
         // Always keep the camera behind the player when rotation (from Mouse X input change) is made
         transform.position = player.transform.position + offsetValue;
