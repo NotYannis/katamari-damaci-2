@@ -8,7 +8,11 @@ public class CameraController : MonoBehaviour {
     public GameObject player;
     private Vector3 offsetValue;
     public int speedRotationCamera = 10;
+<<<<<<< HEAD
     public bool horizontalAxisRotation = true;
+=======
+    private float acceleration = 0;
+>>>>>>> 5fc445e6c15e5ffb0748c733feb552e5576d66bf
 
 	void Start ()
     {
@@ -24,6 +28,7 @@ public class CameraController : MonoBehaviour {
 
     private void FixedUpdate()
     {
+        acceleration = acceleration + 1 *(Input.GetAxis("Mouse Y")/2);
         // Move the player (the ball) along the forward vector of this camera
         Transform transformVectorForward = transform;
 
@@ -34,10 +39,19 @@ public class CameraController : MonoBehaviour {
         transformVectorForward.position = new Vector3(transformVectorForward.position.x, 2, transformVectorForward.position.z);
 
         Vector3 vectorForwardCamera = transformVectorForward.forward;
-        player.GetComponent<PlayerController>().moveForwardVector(vectorForwardCamera);
+        acceleration = acceleration * 3/4;
+        if(acceleration < 0)
+        {
+            acceleration = 0;
+        }else if(acceleration > 200)
+        {
+            acceleration = 200;
+        }
+        player.GetComponent<PlayerController>().moveForwardVector(vectorForwardCamera, acceleration);
     }
 
     private void LateUpdate () {
+
         float axisRotation;
         if (horizontalAxisRotation){
             axisRotation = Input.GetAxis("Mouse X");
@@ -45,7 +59,9 @@ public class CameraController : MonoBehaviour {
         {
             axisRotation = Input.GetAxis("Mouse Y");
         }
-        offsetValue = Quaternion.AngleAxis((axisRotation * ((float)speedRotationCamera / 10)), Vector3.up) * offsetValue;
+        
+        offsetValue = Quaternion.AngleAxis(-(axisRotation * ((float)speedRotationCamera/10)), Vector3.up) * offsetValue;
+
 
         // Always keep the camera behind the player when rotation (from Mouse X input change) is made
         transform.position = player.transform.position + offsetValue;
