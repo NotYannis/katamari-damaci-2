@@ -7,6 +7,9 @@ public class Settings : MonoBehaviour {
 
     public float speedBall=8;
     public float speedCamera=10;
+    public bool mode = true;
+    public bool postproc = true;
+    public bool axe = true;
 
     void Awake()
     {
@@ -23,5 +26,18 @@ public class Settings : MonoBehaviour {
         speedCamera = speed.value * 20;
         if (speedCamera < 3) speedCamera = 3;
         Debug.Log(speedCamera);
+    }
+
+    public void SetMode(bool bmode)
+    {
+        mode = bmode;
+    }
+    public void SetPostProc(Toggle bproc)
+    {
+        postproc = bproc.isOn;
+    }
+    public void SetAxe(Toggle baxe)
+    {
+        axe = baxe.isOn;
     }
 }
