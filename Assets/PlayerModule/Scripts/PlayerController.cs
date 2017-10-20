@@ -22,9 +22,9 @@ public class PlayerController : MonoBehaviour {
     }
 
     // Move the ball by adding force to its rigidbody along the forward vector of the camera (always forward the player's view).
-    public void moveForwardVector(Vector3 vectorForward)
+    public void moveForwardVector(Vector3 vectorForward, float acceleration)
     {
-        rigidbody.AddForce(vectorForward * 100 * speed);
+        rigidbody.AddForce(vectorForward * 100 * speed * acceleration);
     }
 
     private void LateUpdate() {

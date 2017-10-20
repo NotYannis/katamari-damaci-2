@@ -8,6 +8,7 @@ public class CameraController : MonoBehaviour {
     public GameObject player;
     private Vector3 offsetValue;
     public int speedRotationCamera = 10;
+    private float acceleration = 0;
 
 	void Start ()
     {
@@ -16,6 +17,7 @@ public class CameraController : MonoBehaviour {
 
     private void FixedUpdate()
     {
+        acceleration = acceleration + 1 *(Input.GetAxis("Mouse Y")/2);
         // Move the player (the ball) along the forward vector of this camera
         Transform transformVectorForward = transform;
 
@@ -26,7 +28,15 @@ public class CameraController : MonoBehaviour {
         transformVectorForward.position = new Vector3(transformVectorForward.position.x, 2, transformVectorForward.position.z);
 
         Vector3 vectorForwardCamera = transformVectorForward.forward;
-        player.GetComponent<PlayerController>().moveForwardVector(vectorForwardCamera);
+        acceleration = acceleration * 3/4;
+        if(acceleration < 0)
+        {
+            acceleration = 0;
+        }else if(acceleration > 200)
+        {
+            acceleration = 200;
+        }
+        player.GetComponent<PlayerController>().moveForwardVector(vectorForwardCamera, acceleration);
     }
 
     private void LateUpdate () {

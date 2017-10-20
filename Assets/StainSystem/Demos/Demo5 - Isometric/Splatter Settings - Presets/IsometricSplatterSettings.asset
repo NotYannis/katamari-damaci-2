@@ -28,12 +28,12 @@ MonoBehaviour:
   randomRotation: 0
   moveSpeedMean: 0
   moveSpeedVariance: 0
-  stepDuration: 0.1
+  stepDuration: 0.0068
   damping: 1
   colorMode: 0
   startColor: {r: 0.65517235, g: 0, b: 1, a: 1}
   colors:
-  - {r: 0.9453227, g: 0.8041739, b: 0.9852941, a: 0}
+  - {r: 0, g: 0, b: 0, a: 1}
   multiplyColor: 0
   fadeOutBranches: 0
   brightnessVariation: 0

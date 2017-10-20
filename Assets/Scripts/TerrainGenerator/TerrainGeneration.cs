@@ -58,12 +58,14 @@ public class TerrainChunk {
 
     public TerrainType type;
 
-	public TerrainChunk(TerrainChunkSettings _settings, NoiseProvider _noise, TerrainType type, int _x, int _z, GameObject _terrain)
+	public TerrainChunk(TerrainChunkSettings _settings, NoiseProvider _noise, TerrainType _type, int _x, int _z, GameObject _terrain)
 	{
 		Settings = _settings;
 		NoiseProvider = _noise;
 		Position = new Vector3Int(_x, 0, _z);
 		Terrain = _terrain;
+        type = _type;
+        
 	}
 
 	public void CreateTerrain()
