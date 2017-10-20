@@ -21,6 +21,8 @@ GameObject:
   - component: {fileID: 4714488585038324}
   - component: {fileID: 33010529312458278}
   - component: {fileID: 23697115326012572}
+  - component: {fileID: 64667878301697770}
+  - component: {fileID: 114224063500648900}
   m_Layer: 0
   m_Name: pCube5
   m_TagString: Untagged
@@ -92,7 +94,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1826207538855992}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 7.7589827, y: -8.061261e-16, z: 36.3047}
+  m_LocalPosition: {x: -2.9, y: -8.061261e-16, z: 40.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4714488585038324}
@@ -141,6 +143,20 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1375899777659426}
   m_Mesh: {fileID: 4300000, guid: c78f6391a4becc9418b5c83732e2be18, type: 3}
+--- !u!64 &64667878301697770
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1375899777659426}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 1
+  m_InflateMesh: 0
+  m_SkinWidth: 0.01
+  m_Mesh: {fileID: 4300000, guid: c78f6391a4becc9418b5c83732e2be18, type: 3}
 --- !u!108 &108291865361428550
 Light:
   m_ObjectHideFlags: 1
@@ -177,3 +193,14 @@ Light:
   m_UseColorTemperature: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &114224063500648900
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1375899777659426}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee82862b838e7d34da83cce6c6e9d163, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

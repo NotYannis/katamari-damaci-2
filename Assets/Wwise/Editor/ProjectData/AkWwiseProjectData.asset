@@ -16,8 +16,8 @@ MonoBehaviour:
   - PhysicalPath: Events\Default Work Unit.wwu
     ParentPhysicalPath: 
     Guid: '{68292999-CBFA-4C1F-ABF8-FEEB7B497E5F}'
-    m_lastTimePsrt1: -2041027824
-    m_lastTimePart2: -1999300878
+    m_lastTimePsrt1: 789484896
+    m_lastTimePart2: -1999300724
     List:
     - Name: ambiance
       Path: Default Work Unit\ambiance
@@ -38,7 +38,7 @@ MonoBehaviour:
         ObjectType: 3
       ID: -1509743368
       Guid: d0d3de416fd14a45b07cf3883b370dc0
-      maxAttenuation: 100
+      maxAttenuation: 0
     - Name: gonfler
       Path: Default Work Unit\gonfler
       PathAndIcons:
@@ -48,7 +48,17 @@ MonoBehaviour:
         ObjectType: 3
       ID: -896832600
       Guid: d1c30903c037fa4485dac6c2ebe16ce6
-      maxAttenuation: 100
+      maxAttenuation: 0
+    - Name: menu
+      Path: Default Work Unit\menu
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: menu
+        ObjectType: 3
+      ID: -1687411216
+      Guid: d61934c076769943ba75bbc9925c3cfb
+      maxAttenuation: 0
     - Name: music_switch
       Path: Default Work Unit\music_switch
       PathAndIcons:
@@ -58,6 +68,16 @@ MonoBehaviour:
         ObjectType: 3
       ID: -1570097955
       Guid: e1a39f231036694daa622541777d4776
+      maxAttenuation: 0
+    - Name: play
+      Path: Default Work Unit\play
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: play
+        ObjectType: 3
+      ID: 1256202815
+      Guid: f339e20be4725943bb62926fc026c3e8
       maxAttenuation: 0
     - Name: roule_eau
       Path: Default Work Unit\roule_eau
@@ -113,22 +133,22 @@ MonoBehaviour:
   - PhysicalPath: Master-Mixer Hierarchy\Default Work Unit.wwu
     ParentPhysicalPath: 
     Guid: '{B7DC1BD1-661D-4219-92AA-026B25D6B2FE}'
-    m_lastTimePsrt1: -601019138
-    m_lastTimePart2: -1999300876
+    m_lastTimePsrt1: 797226717
+    m_lastTimePart2: -1999300724
     List: []
   StateWwu:
   - PhysicalPath: States\Default Work Unit.wwu
     ParentPhysicalPath: 
     Guid: '{AFEDAB0C-EDED-49AF-B570-567F419C3E63}'
-    m_lastTimePsrt1: 459092812
-    m_lastTimePart2: -1999301306
+    m_lastTimePsrt1: 808357970
+    m_lastTimePart2: -1999300724
     List: []
   SwitchWwu:
   - PhysicalPath: Switches\Default Work Unit.wwu
     ParentPhysicalPath: 
     Guid: '{0B6FBEDD-7129-4FA2-8476-F93998F9DFD7}'
-    m_lastTimePsrt1: -2040917716
-    m_lastTimePart2: -1999300878
+    m_lastTimePsrt1: 808367984
+    m_lastTimePart2: -1999300724
     List:
     - Name: ambiance
       Path: Default Work Unit\ambiance
@@ -176,8 +196,8 @@ MonoBehaviour:
   - PhysicalPath: SoundBanks\Default Work Unit.wwu
     ParentPhysicalPath: 
     Guid: '{37D6B896-1A50-445B-A984-120602F59122}'
-    m_lastTimePsrt1: -1140253003
-    m_lastTimePart2: -1999300875
+    m_lastTimePsrt1: 808337912
+    m_lastTimePart2: -1999300724
     List:
     - Name: New_SoundBank
       Path: Default Work Unit\New_SoundBank
@@ -192,8 +212,8 @@ MonoBehaviour:
   - PhysicalPath: Game Parameters\Default Work Unit.wwu
     ParentPhysicalPath: 
     Guid: '{A1E9D593-E353-47D8-8D51-712D1A117028}'
-    m_lastTimePsrt1: -2041007801
-    m_lastTimePart2: -1999300878
+    m_lastTimePsrt1: 789494903
+    m_lastTimePart2: -1999300724
     List:
     - Name: Volume_control
       Path: Default Work Unit\Volume_control
@@ -217,10 +237,11 @@ MonoBehaviour:
   - PhysicalPath: Triggers\Default Work Unit.wwu
     ParentPhysicalPath: 
     Guid: '{D76E8F6E-F5D8-4F64-9939-831AC112A081}'
-    m_lastTimePsrt1: 459122829
-    m_lastTimePart2: -1999301306
+    m_lastTimePsrt1: 808377999
+    m_lastTimePart2: -1999300724
     List: []
-  ExpandedItems: []
+  ExpandedItems:
+  - /katamari-damaci-2_WwiseProject
   m_lastPopulateTimePsrt1: 0
   m_lastPopulateTimePart2: 0
   autoPopulateEnabled: 1

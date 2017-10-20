@@ -11,7 +11,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 735bbf7ec794347c49beaec86c5345ec, type: 3}
   m_Name: IsometricSplatterSettings
   m_EditorClassIdentifier: 
-  mode: 1
+  mode: 0
   directionMode: 0
   spanAngle: 90
   directionReference: {fileID: 0}

@@ -21,6 +21,8 @@ GameObject:
   - component: {fileID: 4685643415241428}
   - component: {fileID: 33830477686102662}
   - component: {fileID: 23351058598478306}
+  - component: {fileID: 64241489795241964}
+  - component: {fileID: 114016814342712990}
   m_Layer: 0
   m_Name: polySurface51
   m_TagString: Untagged
@@ -36,8 +38,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4081859981398484}
-  - component: {fileID: 65685135876774348}
-  - component: {fileID: 114645029995580888}
   m_Layer: 0
   m_Name: arbre 2
   m_TagString: Untagged
@@ -113,24 +113,26 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1599014829620310}
   m_Mesh: {fileID: 4300024, guid: f43c1b313e8225240b4ef6cfc6c29c39, type: 3}
---- !u!65 &65685135876774348
-BoxCollider:
+--- !u!64 &64241489795241964
+MeshCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1856742990969172}
+  m_GameObject: {fileID: 1599014829620310}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.36, y: 2.63, z: 1.31}
-  m_Center: {x: 0.09, y: 1.28, z: -0.09}
---- !u!114 &114645029995580888
+  m_Convex: 1
+  m_InflateMesh: 0
+  m_SkinWidth: 0.01
+  m_Mesh: {fileID: 4300024, guid: f43c1b313e8225240b4ef6cfc6c29c39, type: 3}
+--- !u!114 &114016814342712990
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1856742990969172}
+  m_GameObject: {fileID: 1599014829620310}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ee82862b838e7d34da83cce6c6e9d163, type: 3}

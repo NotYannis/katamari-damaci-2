@@ -13,7 +13,13 @@ public class CameraController : MonoBehaviour {
 	void Start ()
     {
         offsetValue = new Vector3(player.transform.position.x, player.transform.position.y, player.transform.position.z + 4);
-	}
+        GameObject data = GameObject.Find("Datasettings");
+        if(data != null)
+        {
+            Settings myscript = data.GetComponent<Settings>();
+            speedRotationCamera = (int)myscript.speedCamera;
+        }
+    }
 
     private void FixedUpdate()
     {

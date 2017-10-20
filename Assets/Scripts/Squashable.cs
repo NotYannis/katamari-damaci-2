@@ -21,15 +21,10 @@ public class Squashable : MonoBehaviour {
     }
 
     public void OnCollisionEnter(Collision collision) {
-        Debug.Log("Collision !");
         if(collision.gameObject.tag == "Player") {
             if (!_isSquashing) {
-                Destroy(GetComponent<Collider>());
-                if(transform.parent != null) {
-                    StartCoroutine(transform.parent.GetComponent<Squashable>().SquashEffect());
-                } else {
-                    StartCoroutine(SquashEffect());
-                }
+                GetComponent<Collider>().enabled = false;
+                StartCoroutine(SquashEffect());
             }
         }
     }
@@ -40,25 +35,17 @@ public class Squashable : MonoBehaviour {
         float t = 0f;
         Vector3 scale = new Vector3();
 
-        Vector3 baseScale = transform.localScale;
+        Vector3 baseScale = transform.parent.localScale;
         Vector3 endScale = new Vector3(1f, 0.05f, 1f);
 
         while (t < 1) {
             t += Time.deltaTime / _squashRate;
             scale = Vector3.Lerp(baseScale, endScale, t);
-            transform.localScale = scale;
+            transform.parent.localScale = scale;
             yield return null;
         }
 
-        if (transform.parent != null) {
-            transform.GetChild(0).gameObject.AddComponent<MeshCollider>();
-            StartCoroutine(transform.parent.GetComponent<Squashable>().Reflate());
-        }
-        else {
-            gameObject.AddComponent<MeshCollider>();
-            gameObject.AddComponent<MeshCollider>().convex = true;
-            StartCoroutine(Reflate());
-        }
+        StartCoroutine(Reflate());
     }
 
     public IEnumerator Reflate() {
@@ -68,14 +55,17 @@ public class Squashable : MonoBehaviour {
         float t = 0f;
         Vector3 scale = new Vector3();
 
-        Vector3 baseScale = transform.localScale;
+        Vector3 baseScale = transform.parent.localScale;
         Vector3 endScale = new Vector3(1f, 1f, 1f);
 
         while (t < 1) {
             t += Time.deltaTime / _squashRate;
             scale = Vector3.Lerp(baseScale, endScale, t);
-            transform.localScale = scale;
+            transform.parent.localScale = scale;
             yield return null;
         }
+
+        GetComponent<Collider>().enabled = true;
+        _isSquashing = false;
     }
 }
