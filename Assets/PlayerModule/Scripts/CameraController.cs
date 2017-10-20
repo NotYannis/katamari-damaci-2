@@ -7,6 +7,7 @@ public class CameraController : MonoBehaviour {
     // The GameObject which contained the PlayerController script, to move the ball
     public GameObject player;
     private Vector3 offsetValue;
+    public int speedRotationCamera = 10;
 
 	void Start ()
     {
@@ -29,7 +30,7 @@ public class CameraController : MonoBehaviour {
     }
 
     private void LateUpdate () {
-        offsetValue = Quaternion.AngleAxis(Input.GetAxis("Mouse X"), Vector3.up) * offsetValue;
+        offsetValue = Quaternion.AngleAxis((Input.GetAxis("Mouse X") * ((float)speedRotationCamera/10)), Vector3.up) * offsetValue;
 
         // Always keep the camera behind the player when rotation (from Mouse X input change) is made
         transform.position = player.transform.position + offsetValue;

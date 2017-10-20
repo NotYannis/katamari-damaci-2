@@ -14,6 +14,12 @@ public class PlayerController : MonoBehaviour {
     private void Start()
     {
         rigidbody = GetComponent<Rigidbody>();
+        Debug.Log("Start");
+        GameObject data = GameObject.Find("Datasettings");
+        Settings myscript = data.GetComponent<Settings>();
+        speed = (int)myscript.speedBall;
+        Debug.Log(myscript.speedBall);
+        Debug.Log(speed);
     }
 
     private void Update()
@@ -29,5 +35,29 @@ public class PlayerController : MonoBehaviour {
 
     private void LateUpdate() {
         rigidbody.velocity = Vector3.ClampMagnitude(rigidbody.velocity, 15);
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.GetComponentsInChildren<EntitiesDetection>().Length != 0)
+        {
+            if (other.GetComponentsInChildren<EntitiesDetection>()[0] != null)
+            {
+                other.GetComponentsInChildren<EntitiesDetection>()[0].enabled = true;
+                other.GetComponentsInChildren<Rigidbody>()[0].isKinematic = false;
+            }
+        }
+    }
+
+    void OnTriggerExit(Collider other)
+    {
+        if (other.GetComponentsInChildren<EntitiesDetection>().Length != 0)
+        {
+            if (other.GetComponentsInChildren<EntitiesDetection>()[0] != null)
+            {
+                other.GetComponentsInChildren<EntitiesDetection>()[0].enabled = false;
+                other.GetComponentsInChildren<Rigidbody>()[0].isKinematic = true;
+            }
+        }
     }
 }
