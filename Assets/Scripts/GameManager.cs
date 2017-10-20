@@ -6,8 +6,8 @@ public class GameManager : MonoBehaviour {
 
     public GameObject pauseMenu;
 
-    static public float squashRate = 0.05f;
-    private float _lastSquashRate = 0.05f;
+    static public float squashRate = 0.5f;
+    private float _lastSquashRate = 0.5f;
     
     void Update() {
         
