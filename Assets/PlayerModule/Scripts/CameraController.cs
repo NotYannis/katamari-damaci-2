@@ -8,11 +8,9 @@ public class CameraController : MonoBehaviour {
     public GameObject player;
     private Vector3 offsetValue;
     public int speedRotationCamera = 10;
-<<<<<<< HEAD
     public bool horizontalAxisRotation = true;
-=======
+
     private float acceleration = 0;
->>>>>>> 5fc445e6c15e5ffb0748c733feb552e5576d66bf
 
 	void Start ()
     {
