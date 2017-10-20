@@ -678,16 +678,13 @@ Prefab:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
-<<<<<<< HEAD
     - target: {fileID: 54664875940892986, guid: 211fc0f177d5f844da0172710e3b23fe,
         type: 2}
       propertyPath: m_Mass
       value: 100
-=======
     - target: {fileID: 1072916883706990, guid: 211fc0f177d5f844da0172710e3b23fe, type: 2}
       propertyPath: m_TagString
       value: Player
->>>>>>> f8b293a53543ece9a127f2d4230b2475b2af24e6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 211fc0f177d5f844da0172710e3b23fe, type: 2}
