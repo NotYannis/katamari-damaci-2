@@ -831,6 +831,14 @@ Prefab:
       propertyPath: m_SelectedEditorRenderState
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 19891130, guid: f2d7aecc33ad44d6e82de57427232543, type: 2}
+      propertyPath: EmissionModule.enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 19891130, guid: f2d7aecc33ad44d6e82de57427232543, type: 2}
+      propertyPath: randomSeed
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f2d7aecc33ad44d6e82de57427232543, type: 2}
   m_IsPrefabParent: 0
@@ -1777,6 +1785,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1702477824}
+  speedRotationCamera: 10
 --- !u!114 &1322680572
 MonoBehaviour:
   m_ObjectHideFlags: 0

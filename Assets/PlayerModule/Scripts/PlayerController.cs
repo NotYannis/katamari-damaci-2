@@ -14,6 +14,12 @@ public class PlayerController : MonoBehaviour {
     private void Start()
     {
         rigidbody = GetComponent<Rigidbody>();
+        Debug.Log("Start");
+        GameObject data = GameObject.Find("Datasettings");
+        Settings myscript = data.GetComponent<Settings>();
+        speed = (int)myscript.speedBall;
+        Debug.Log(myscript.speedBall);
+        Debug.Log(speed);
     }
 
     private void Update()
