@@ -25,6 +25,15 @@ public class CameraController : MonoBehaviour {
             horizontalAxisRotation = myscript.axe;
             GetComponent<PostProcessVolumeReceiver>().enabled = myscript.postproc;
             GetComponent<UnityEngine.PostProcessing.PostProcessingBehaviour>().enabled = myscript.postproc;
+
+            if (myscript.controle)
+            {
+                controlMouse = false;
+            }
+            else
+            {
+                controlMouse = true;
+            }
         }
     }
 
