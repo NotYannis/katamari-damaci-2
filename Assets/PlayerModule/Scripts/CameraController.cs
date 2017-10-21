@@ -9,6 +9,7 @@ public class CameraController : MonoBehaviour {
     private Vector3 offsetValue;
     public int speedRotationCamera = 10;
     public bool horizontalAxisRotation = true;
+    public bool controlMouse = true;
 
     private float acceleration = 0;
 
@@ -29,7 +30,26 @@ public class CameraController : MonoBehaviour {
 
     private void FixedUpdate()
     {
-        acceleration = acceleration + 1 *(Input.GetAxis("Mouse Y")/2);
+        float axisRotation;
+        if (!controlMouse)
+        {
+            axisRotation = Input.GetAxis("Vertical");
+        }
+        else
+        {
+            if (horizontalAxisRotation)
+            {
+                axisRotation = Input.GetAxis("Mouse Y");
+            }
+            else
+            {
+                axisRotation = Input.GetAxis("Mouse X");
+            }
+        }
+        
+
+        
+        acceleration = acceleration + 1 *(axisRotation/2);
         // Move the player (the ball) along the forward vector of this camera
         Transform transformVectorForward = transform;
 
@@ -54,14 +74,26 @@ public class CameraController : MonoBehaviour {
     private void LateUpdate () {
 
         float axisRotation;
-        if (horizontalAxisRotation){
-            axisRotation = Input.GetAxis("Mouse X");
-        }else
+        if (!controlMouse)
         {
-            axisRotation = Input.GetAxis("Mouse Y");
+            axisRotation = Input.GetAxis("Horizontal");
+            offsetValue = Quaternion.AngleAxis(-(axisRotation * ((float)speedRotationCamera / 4)), Vector3.up) * offsetValue;
+        }
+        else
+        {
+            if (horizontalAxisRotation)
+            {
+                axisRotation = Input.GetAxis("Mouse X");
+            }
+            else
+            {
+                axisRotation = Input.GetAxis("Mouse Y");
+            }
+            offsetValue = Quaternion.AngleAxis(-(axisRotation * ((float)speedRotationCamera / 10)), Vector3.up) * offsetValue;
         }
         
-        offsetValue = Quaternion.AngleAxis(-(axisRotation * ((float)speedRotationCamera/10)), Vector3.up) * offsetValue;
+        
+        
 
         // Always keep the camera behind the player when rotation (from Mouse X input change) is made
         transform.position = player.transform.position + offsetValue;

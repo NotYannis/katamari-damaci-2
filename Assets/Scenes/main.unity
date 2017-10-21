@@ -709,6 +709,7 @@ MonoBehaviour:
   player: {fileID: 1702477824}
   speedRotationCamera: 10
   horizontalAxisRotation: 1
+  controlMouse: 1
 --- !u!114 &1322680572
 MonoBehaviour:
   m_ObjectHideFlags: 0
