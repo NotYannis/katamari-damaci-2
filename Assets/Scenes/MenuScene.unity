@@ -7293,7 +7293,7 @@ MonoBehaviour:
   mode: 1
   postproc: 1
   axe: 1
-  controle: 0
+  controle: 1
 --- !u!4 &1727858927
 Transform:
   m_ObjectHideFlags: 0
